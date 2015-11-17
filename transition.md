@@ -145,3 +145,24 @@ files:
 (inbox: 月份变化)
 
 ## 20151117 first model
+
+### 整理 model 数据
+
+cleaned data(去除特殊日期后) 6-21
+
+X hour, is_workday
+y line10 count
+
+整理为 `matrix_1117.csv`
+
+用 pandas 整理为 numpy array, 准备用
+
+pandas 整理数据 提取矩阵好用
+
+ipynb 跑 sklearn 也比较靠谱 `1117.ipynb`
+
+输出为 np.txt, 后续应该整理为更好的格式, 输出回矩阵为好
+
+需要一个一键生成最终 txt 的脚本
+
+更长远则是 pipeline
