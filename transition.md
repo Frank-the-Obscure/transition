@@ -80,20 +80,23 @@ groupby等处理之后, 标签变成了第二行, 无法作为后续的行列标
 
 ### 2. 可视化
 
+`plot_1119.xlsx-plot_by_hour`: 按小时的plot
+
 明显表现出早晚高峰的特征, 初步看来方差并不大.
 可用平均值预测一次.
 
 ### 3. 预测 CV
 
-
-
 ### 4. CV 质控
 
 ### 5. 预测测试集
+
 直接调整 excel 文件
 
 0101用周日的数据
+
 0102,0103用周六的数据
+
 4,5,6,7用周一二三四的数据
 
 只需要预测6-21的数据, 其它删去.
@@ -111,7 +114,6 @@ groupby等处理之后, 标签变成了第二行, 无法作为后续的行列标
 随周末变化明显; 假期效果明显(9.6-8中秋; 10.1-7国庆: 9.28 10.11上班)
 
 8.11-8.13, 8.15, 8.18数据明显异常
-
 
 ### 拍脑门设计第二次提交
 
@@ -178,7 +180,7 @@ line15 rf cv 0.927390457474
 precision: `1118`
 
 
-## 20151118 second model
+## 20151118 second model `1118-2.ipynb`
 
 weekday 转换为周一-周日的数据
 
@@ -188,7 +190,7 @@ weekday 转换为周一-周日的数据
 - CV
 - predict
 
-### crosstab 整合信息
+### crosstab 整合信息 by pandas
 
 `train_1118.csv`: 基本信息
 
@@ -205,9 +207,54 @@ weekday 转换为周一-周日的数据
 
 ### predict
 
-数据未整理...
+数据未整理...迅速整理为相同格式的输入
+
+写了简单的输出格式化脚本 `format_predict_1118.py`, 需要进一步整合成更大的 workflow
 
 ### todo 
 
 hour 是否要转成 0/1 
+
 1/1 可能要按周日预测, 而非周六(看一下十一的情况)
+
+btw: 
+
+1. log 保持跟踪很重要
+2. 夜了...搞到一点实在累. 尽量避免
+
+## 20151119 plot and CV `1119.ipynb`
+
+Outline:
+
+- 作图, 发现问题
+
+
+### plot in matplotlib
+
+`%matplotlib inline` in first cell
+
+1118: precision 
+
+line10 0.7735
+
+line15 0.7331
+
+
+测试 models
+
+linear model 明显表现不行, SVM 表现也不行.
+
+猜测是 hour 的问题, 转换为一系列 0/1 features
+
+RF 无明显变化
+
+### final predict
+
+50 features 预测
+
+1.1-1.3 全部按周日预测
+
+注: 最后 csv -> txt 需要改一下日期格式, 回头整合.
+
+
+inbox: 也许可加一个异常天气变量(如 temp-ave_temp)表征异常天气
