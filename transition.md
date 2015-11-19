@@ -166,3 +166,48 @@ ipynb 跑 sklearn 也比较靠谱 `1117.ipynb`
 需要一个一键生成最终 txt 的脚本
 
 更长远则是 pipeline
+
+```
+line10 rf train 0.946813459599
+line10 rf cv 0.949336870506
+line15 rf train 0.927900606389
+line15 rf cv 0.927390457474
+
+```
+
+precision: `1118`
+
+
+## 20151118 second model
+
+weekday 转换为周一-周日的数据
+
+- crosstab 整合信息
+- 整理为 0/1 特征
+- model/可视化
+- CV
+- predict
+
+### crosstab 整合信息
+
+`train_1118.csv`: 基本信息
+
+`weather_1118.csv`: 天气信息
+
+用 `date` join 两个列表: `join_1118.csv`
+
+`feature_01_1118.py`: 整理为01变量, `features_1118.csv`
+
+0.992296797628
+0.946711671255
+0.990874187631
+0.941209986176
+
+### predict
+
+数据未整理...
+
+### todo 
+
+hour 是否要转成 0/1 
+1/1 可能要按周日预测, 而非周六(看一下十一的情况)
