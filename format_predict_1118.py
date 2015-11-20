@@ -5,9 +5,9 @@
 
 import re
 
-f = open('predict_rf_all_1119.csv', encoding='utf-8')
+f = open('predict_rf_all_1120.csv', encoding='utf-8')
 
-output = open('gd_predict_1119.txt', 'w', encoding='utf-8')
+output = open('gd_predict_1120.txt', 'w', encoding='utf-8')
 
 t = re.compile(',')
 
@@ -24,9 +24,13 @@ for line in f:
     new_col_10.append('线路10') 
     new_col_15.append('线路15')
     new_col_10.append(columns[1])
-    new_col_10.append(columns[2])    
     new_col_15.append(columns[1])
-    new_col_15.append(columns[2])    
+    if int(columns[2]) < 10:
+        new_col_10.append('0' + columns[2]) 
+        new_col_15.append('0' + columns[2])  
+    else:
+        new_col_10.append(columns[2]) 
+        new_col_15.append(columns[2])  
     new_col_10.append(columns[3])
     new_col_15.append(columns[4])    
 
