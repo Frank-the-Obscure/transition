@@ -350,3 +350,13 @@ GBRT 预测: 防止 RF 过拟合
 提交用完整训练集预测的结果(相同模型, 但用全部数据)
 
 
+## 1122:
+
+需要先看看训练集的拟合误差是多少, 只看 R^2 不够.
+
+太夜了, 改改 RF 提交一版吧.
+
+calculation of columns in pandas
+
+[link](http://stackoverflow.com/questions/12376863/adding-calculated-columns-to-a-dataframe-in-pandas)
+

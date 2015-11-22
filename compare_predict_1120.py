@@ -59,4 +59,4 @@ def plot(file1, file2):
     plt.show()
 
 
-plot('gd_predict_1121.txt','gd_predict_1119_revised.txt')
+plot('gd_predict_1119_revised.txt','gd_predict_1122.txt')
