@@ -7,6 +7,8 @@
 from sys import argv
 import matplotlib.pyplot as plt
 
+script, file1, file2 = argv
+
 def file_to_list(filename):
     """
 
@@ -59,4 +61,4 @@ def plot(file1, file2):
     plt.show()
 
 
-plot('gd_predict_1119_revised.txt','gd_predict_1122.txt')
+plot(file1, file2)

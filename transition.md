@@ -360,3 +360,17 @@ calculation of columns in pandas
 
 [link](http://stackoverflow.com/questions/12376863/adding-calculated-columns-to-a-dataframe-in-pandas)
 
+
+## 1123:
+
+1122结果还不如前几天...似乎倒是有些奇怪
+
+合并天气:
+
+day: 0.7485, 0.7128
+
+day & night: 0.7520, 0.7182
+
+想法似乎可行, 得到目前最好的测试集表现
+
+Next: 整理不同用户卡类型, 分开几个模型(简单模型)再做预测
