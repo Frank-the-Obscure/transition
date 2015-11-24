@@ -5,9 +5,9 @@
 
 import re
 
-f = open('predict_rf_1123.csv', encoding='utf-8')
+f = open('predict_rf_1124.csv', encoding='utf-8')
 
-output = open('gd_predict_1123.txt', 'w', encoding='utf-8')
+output = open('gd_predict_1124.txt', 'w', encoding='utf-8')
 
 t = re.compile(',')
 
